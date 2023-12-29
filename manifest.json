@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "TabSwitcher",
+    "description": "Extension to switch tabs with easier commands.",
+    "version": "1.0",
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "permissions": ["activeTab", "tabs"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+      ],
+    "commands": {
+        "move_right" : {
+            "suggested_key": {
+                 "default": "Ctrl+Right" 
+            },
+            "description": "Switch to tab on the right"
+        },
+        "move_left": {
+            "suggested_key": {
+                "default": "Ctrl+Left"
+            },
+            "description": "Switch to tab on the left"
+        }
+    }
+}
