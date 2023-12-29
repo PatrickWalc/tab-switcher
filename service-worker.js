@@ -12,12 +12,12 @@ chrome.commands.onCommand.addListener(async function (command) {
 });
 
 async function getCurrentTab() {
-    let queryOptions = { active: true, lastFocusedWindow: true };
+    let queryOptions = { active: true, currentWindow: true };
     let [tab] = await chrome.tabs.query(queryOptions);
     return tab;
 }
 
 async function getTabs() {
-    let tabs = await chrome.tabs.query({})
+    let tabs = await chrome.tabs.query({currentWindow: true})
     return tabs;
 }
