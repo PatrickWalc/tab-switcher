@@ -8,8 +8,15 @@ chrome.commands.onCommand.addListener(async function (command) {
         if(command === "move_left"){
             chrome.tabs.update(currentTab.index === 0 ? tabs[tabs.length - 1].id : tabs[currentTab.index - 1].id, {selected: true});
         }
+        if (command === "first_tab"){
+            chrome.tabs.update(tabs[0].id, {selected: true});
+        }
+        if (command === "last_tab"){
+            chrome.tabs.update(tabs[tabs.length - 1].id, {selected: true});
+        }
     }
 });
+
 
 async function getCurrentTab() {
     let queryOptions = { active: true, currentWindow: true };
